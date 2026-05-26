@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:run": "echo \"Error: no test specified\" && exit 0",
-    "build": "echo \"No build configured yet\" && exit 0",
+    "build": "tsup",
     "format:check": "prettier src/ --check",
     "format:write": "prettier src/ --write"
   },

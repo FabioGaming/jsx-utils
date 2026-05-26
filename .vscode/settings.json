@@ -2,6 +2,9 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
 
+  "js/ts.preferences.importModuleSpecifier": "non-relative",
+  "js/ts.preferences.importModuleSpecifierEnding": "minimal",
+
   "editor.codeActionsOnSave": {
     "source.fixAll": "always"
   }

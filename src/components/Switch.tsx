@@ -1,5 +1,5 @@
 import React from "react";
-import { Match, MatchProps } from "src/components/Match";
+import { Match, MatchProps } from "./Match";
 
 export function Switch(props: { children: React.ReactNode }) {
   const children = React.Children.toArray(props.children);

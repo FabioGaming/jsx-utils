@@ -5,6 +5,7 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "ignoreDeprecations": "6.0",
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["src/*"]
     },

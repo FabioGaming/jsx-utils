@@ -9,8 +9,8 @@ export type MatchProps = {
  * Renders children only when `when` is truthy.
  *
  * @remarks
- * `Match` should only be used inside `Switch`.
- * For standalone conditional rendering, use `Show`.
+ * `Match` is typically used inside `Switch`.
+ * For standalone conditional rendering, consider `Show`.
  *
  * @example
  * ```tsx

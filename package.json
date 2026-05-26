@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test:run": "echo \"Error: no test specified\" && exit 0",
-    "build": "echo \"No build configured yet\" && exit 0"
+    "build": "echo \"No build configured yet\" && exit 0",
+    "format:check": "prettier src/ --check",
+    "format:write": "prettier src/ --write"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +22,7 @@
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
     "jsdom": "^29.1.1",
+    "prettier": "^3.8.3",
     "publint": "^0.3.21",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",

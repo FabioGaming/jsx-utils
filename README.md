@@ -32,6 +32,7 @@ JSX-Utils features both this, as well as a built in documentation that you can v
 To get started with JSX Utils you can install it both through NPM as well as GitHub's package registry
 
 NPM Install (recommended): `npm install @fabi-dev/jsx-utils`
+
 GitHub Install: `npm install @fabi-dev/jsx-utils --registry=https://npm.pkg.github.com`
 
 **Note**

@@ -6,12 +6,12 @@ A zero dependency React library that adds [SolidJS](https://www.solidjs.com/) JS
 
 ### Table of Contents
 
-- 1. [Basic Information](#1-basic-information)
-- 2. [Documentation](#2-documentation)
-  - 2.1 [Getting Started](#21-getting-started)
-  - 2.2 [Added JSX-Nodes with Examples](#22-added-jsx-nodes-with-examples)
-  - 2.3 [Examples](#23-examples)
-- 3. [AI Usage & Transparency](#3-ai-usage--transparency)
+- [Basic Information](#1-basic-information)
+- [Documentation](#2-documentation)
+  - [Getting Started](#21-getting-started)
+  - [Added JSX-Nodes with Examples](#22-added-jsx-nodes-with-examples)
+  - [Examples](#23-examples)
+- [AI Usage & Transparency](#3-ai-usage--transparency)
 
 ---
 

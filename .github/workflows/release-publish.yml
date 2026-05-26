@@ -1,0 +1,53 @@
+name: Release Publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm run build
+      - run: npm run test:run
+
+      - name: Pack release zip
+        id: pack
+        run: |
+          PACKAGE_TGZ=$(npm pack --silent)
+          PACKAGE_ZIP="${PACKAGE_TGZ%.tgz}.zip"
+          zip -9 "$PACKAGE_ZIP" "$PACKAGE_TGZ"
+          echo "package_zip=$PACKAGE_ZIP" >> "$GITHUB_OUTPUT"
+
+      - name: Upload release asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.pack.outputs.package_zip }}
+
+      - name: Setup GitHub Packages registry
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://npm.pkg.github.com
+          scope: "@fabiogaming"
+
+      - name: Set GitHub Packages scope
+        run: npm pkg set name=@fabiogaming/jsx-utils
+
+      - name: Publish to GitHub Packages
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

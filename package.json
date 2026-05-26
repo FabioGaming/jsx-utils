@@ -1,19 +1,62 @@
 {
-  "name": "@fabi-dev/jsx-utils",
+  "name": "@fabiothefox/jsx-utils",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "SolidJS-inspired JSX control flow utilities for React ecosystems",
+  "license": "MIT",
+  "author": "FabioTheFox@Fabidev",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FabioGaming/jsx-utils.git"
+  },
+  "homepage": "https://github.com/FabioGaming/jsx-utils#readme",
+  "bugs": {
+    "url": "https://github.com/FabioGaming/jsx-utils/issues"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "nextjs",
+    "tsx",
+    "jsx",
+    "solidjs",
+    "solid",
+    "control-flow",
+    "show",
+    "switch",
+    "match",
+    "for",
+    "typescript",
+    "utility"
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/FabioGaming"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
+    "build": "tsup",
     "test": "vitest",
     "test:run": "vitest run",
-    "build": "tsup",
     "format:check": "prettier src/ --check",
     "format:write": "prettier src/ --write"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "peerDependencies": {
     "react": ">=17.0.0"
   },
@@ -25,13 +68,14 @@
     "jsdom": "^29.1.1",
     "prettier": "^3.8.3",
     "publint": "^0.3.21",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "tsup": "^8.5.1",
     "typescript": "^6.0.3",
     "vitest": "^4.1.7"
   },
   "engines": {
-    "node": "^20.19.0 || ^22.13.0 || >=24.0.0"
-  }
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "packageManager": "npm@11.6.2"
 }

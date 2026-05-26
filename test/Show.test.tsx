@@ -1,4 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { useState } from "react";
 import { describe, test, expect } from "vitest";
 import { Show } from "../src/components/Show";
 
@@ -124,5 +125,32 @@ describe("Show", () => {
 
     expect(screen.queryByText("children")).not.toBeInTheDocument();
     expect(container.firstChild).toBeNull();
+  });
+
+  test("updates when the condition state changes", () => {
+    function Harness() {
+      const [visible, setVisible] = useState(false);
+
+      return (
+        <>
+          <button type="button" onClick={() => setVisible((value) => !value)}>
+            toggle
+          </button>
+          <Show when={visible} fallback="hidden">
+            shown
+          </Show>
+        </>
+      );
+    }
+
+    render(<Harness />);
+
+    expect(screen.queryByText("shown")).not.toBeInTheDocument();
+    expect(screen.getByText("hidden")).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: "toggle" }));
+
+    expect(screen.getByText("shown")).toBeInTheDocument();
+    expect(screen.queryByText("hidden")).not.toBeInTheDocument();
   });
 });

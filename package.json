@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:run": "echo \"Error: no test specified\" && exit 0",
+    "test": "vitest",
+    "test:run": "vitest run",
     "build": "tsup",
     "format:check": "prettier src/ --check",
     "format:write": "prettier src/ --write"

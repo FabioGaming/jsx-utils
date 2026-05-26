@@ -1,6 +1,18 @@
 import React from "react";
 import { Match, MatchProps } from "./Match";
 
+/**
+ * Renders the children of the first `Match` child whose `when` prop is truthy.
+ *
+ * @example
+ * ```tsx
+ * <Switch>
+ *   <Match when={status === "loading"}>Loading...</Match>
+ *   <Match when={status === "success"}>Done!</Match>
+ *   <Match when={status === "error"}>Something went wrong.</Match>
+ * </Switch>
+ * ```
+ */
 export function Switch(props: { children: React.ReactNode }) {
   const children = React.Children.toArray(props.children);
 

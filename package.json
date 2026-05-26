@@ -47,6 +47,9 @@
     "url": "https://github.com/sponsors/FabioGaming"
   },
   "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup",
     "test": "vitest",

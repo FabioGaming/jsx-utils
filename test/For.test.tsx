@@ -8,7 +8,7 @@ describe("For", () => {
       <For each={["a", "b"]}>{(item) => <div key={item}>{item}</div>}</For>
     );
 
-    expect(screen.getByText("a")).toBeTruthy();
-    expect(screen.getByText("b")).toBeTruthy();
+    expect(screen.getByText("a")).toBeInTheDocument();
+    expect(screen.getByText("b")).toBeInTheDocument();
   });
 });

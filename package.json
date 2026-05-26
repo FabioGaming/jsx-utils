@@ -1,5 +1,5 @@
 {
-  "name": "@fabi-dev/jsx-utils",
+  "name": "@fabiothefox/jsx-utils",
   "version": "1.0.0",
   "description": "SolidJS-inspired JSX control flow utilities for React ecosystems",
   "license": "MIT",

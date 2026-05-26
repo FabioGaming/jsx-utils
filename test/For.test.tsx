@@ -1,4 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { useState } from "react";
 import { describe, test, expect } from "vitest";
 import { For } from "../src/components/For";
 
@@ -66,5 +67,32 @@ describe("For", () => {
     expect(screen.getByText("Number: 1")).toBeInTheDocument();
     expect(screen.getByText("Number: 2")).toBeInTheDocument();
     expect(screen.getByText("Number: 3")).toBeInTheDocument();
+  });
+
+  test("updates when the items state changes", () => {
+    function Harness() {
+      const [items, setItems] = useState(["a", "b"]);
+
+      return (
+        <>
+          <button type="button" onClick={() => setItems(["a", "b", "c"])}>
+            add item
+          </button>
+          <For each={items}>{(item) => <div key={item}>{item}</div>}</For>
+        </>
+      );
+    }
+
+    render(<Harness />);
+
+    expect(screen.getByText("a")).toBeInTheDocument();
+    expect(screen.getByText("b")).toBeInTheDocument();
+    expect(screen.queryByText("c")).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: "add item" }));
+
+    expect(screen.getByText("a")).toBeInTheDocument();
+    expect(screen.getByText("b")).toBeInTheDocument();
+    expect(screen.getByText("c")).toBeInTheDocument();
   });
 });

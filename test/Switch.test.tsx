@@ -1,4 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { useState } from "react";
 import { describe, test, expect } from "vitest";
 import { Switch } from "../src/components/Switch";
 import { Match } from "../src/components/Match";
@@ -69,5 +70,45 @@ describe("Switch", () => {
     expect(screen.queryByText("first")).toBeNull();
     expect(screen.getByText("nested")).toBeTruthy();
     expect(screen.getByText("content")).toBeTruthy();
+  });
+
+  test("switches matches when state changes", () => {
+    function Harness() {
+      const [mode, setMode] = useState<"idle" | "loading" | "done">("idle");
+
+      return (
+        <>
+          <button type="button" onClick={() => setMode("loading")}>
+            set loading
+          </button>
+          <button type="button" onClick={() => setMode("done")}>
+            set done
+          </button>
+          <Switch>
+            <Match when={mode === "idle"}>idle</Match>
+            <Match when={mode === "loading"}>loading</Match>
+            <Match when={mode === "done"}>done</Match>
+          </Switch>
+        </>
+      );
+    }
+
+    render(<Harness />);
+
+    expect(screen.getByText("idle")).toBeInTheDocument();
+    expect(screen.queryByText("loading")).not.toBeInTheDocument();
+    expect(screen.queryByText("done")).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: "set loading" }));
+
+    expect(screen.queryByText("idle")).not.toBeInTheDocument();
+    expect(screen.getByText("loading")).toBeInTheDocument();
+    expect(screen.queryByText("done")).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: "set done" }));
+
+    expect(screen.queryByText("idle")).not.toBeInTheDocument();
+    expect(screen.queryByText("loading")).not.toBeInTheDocument();
+    expect(screen.getByText("done")).toBeInTheDocument();
   });
 });

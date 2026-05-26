@@ -1,16 +1,37 @@
 {
-  "name": "@fabidev/jsx-utils",
+  "name": "@fabi-dev/jsx-utils",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest",
+    "test:run": "vitest run",
+    "build": "tsup",
+    "format:check": "prettier src/ --check",
+    "format:write": "prettier src/ --write"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "peerDependencies": {
-    "react": ">=16.8.0"
+    "react": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.8.3",
+    "publint": "^0.3.21",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.7"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24.0.0"
   }
 }

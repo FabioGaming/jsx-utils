@@ -6,9 +6,5 @@ export type ForProps<T> = {
 };
 
 export function For<T>(props: ForProps<T>) {
-  return (
-    <>
-      {props.each.map((ClipboardItem, i) => props.children(ClipboardItem, i))}
-    </>
-  );
+  return <>{props.each.map((item, i) => props.children(item, i))}</>;
 }

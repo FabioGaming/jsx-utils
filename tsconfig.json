@@ -6,9 +6,6 @@
     "baseUrl": ".",
     "ignoreDeprecations": "6.0",
     "allowSyntheticDefaultImports": true,
-    "paths": {
-      "@/*": ["src/*"]
-    },
 
     "strict": true,
 
@@ -18,5 +15,5 @@
     "outDir": "dist",
     "skipLibCheck": true
   },
-  "include": ["src"]
+  "include": ["src", "test"]
 }

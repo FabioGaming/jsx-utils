@@ -13,5 +13,9 @@
   "type": "commonjs",
   "peerDependencies": {
     "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.15",
+    "react": "^19.2.6"
   }
 }

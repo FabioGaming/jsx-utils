@@ -31,14 +31,14 @@ JSX-Utils features both this, as well as a built in documentation that you can v
 
 To get started with JSX Utils you can install it both through NPM as well as GitHub's package registry
 
-NPM Install (recommended): `npm install @fabi-dev/jsx-utils`
+NPM Install (recommended): `npm install @fabiothefox/jsx-utils`
 
-GitHub Install: `npm install @fabi-dev/jsx-utils --registry=https://npm.pkg.github.com`
+GitHub Install: `npm install @fabiogaming/jsx-utils --registry=https://npm.pkg.github.com`
 
 **Note**
 For GitHub the installation might require some additional steps, such as:
 
-- Creating an `.npmrc` file with the following content: `@fabi-dev:registry=https://npm.pkg.github.com` at the root of your project
+- Creating an `.npmrc` file with the following content: `@fabiogaming:registry=https://npm.pkg.github.com` at the root of your project
 - Logging into the GitHub package registry: `npm login --registry=https://npm.pkg.github.com`
 
 ### 2.2 Added JSX-Nodes With Examples

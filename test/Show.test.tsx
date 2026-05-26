@@ -15,7 +15,7 @@ describe("Show", () => {
     expect(screen.queryByText("no")).not.toBeInTheDocument();
   });
 
-  test("does not renders children when false", () => {
+  test("does not render children when false", () => {
     render(<Show when={false}>test</Show>);
 
     expect(screen.queryByText("test")).not.toBeInTheDocument();
